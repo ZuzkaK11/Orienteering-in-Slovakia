@@ -115,6 +115,7 @@ Orientačný beh sa odohráva v rôznych prostrediach – od lesov po mestské c
 Obľúbenosť disciplín závisí najmä od preferencií jednotlivých bežcov (Graf 8). V minulosti sa pretekalo len na dlhých a stredných tratiach, no dnes sa tešia obľúbenosti aj šprinty, ktoré sú typické svojou dynamickosťou a mestským terénom.
 
 <img src="/images/graf8.png" alt="Graf 8" height="300">
+
 *Graf 8: Horizontálny stĺpcový graf zobrazuje obľúbenosť jednotlivých disciplín. Na osi y sú názvy jednotlivých disciplín, na osi x priemerné počty pretekárov na jednu súťaž.*
 
 Každoročne sa organizuje veľa rôznych súťaží. V rámci Slovenska sú rozdelené na oblastné, školské a celoslovenské. V analýze som sa venovala práve celoslovenským pretekom, nakoľko na školských sa zúčastňujú aj neregistrovaní bežci a pri oblastných sa pravidlá klasifikácie a rozdelenia kategórií mierne líšia.
@@ -123,8 +124,7 @@ Celoslovenské preteky zahŕňajú Slovenské rebríčky a majstrovstvá Slovens
 
 Počas sezóny, ktorá trvá približne od marca do konca novembra, sú preteky rozdelené zväčša rovnomerne. Výnimkou sú letné prázdniny kedy ich je menej, pretože pretekári často cestujú na medzinárodné preteky a sústredenia do zahraničných terénov. Organizačnú štruktúru pretekov na Slovensku tvoria samotné kluby, a preto by si túto povinnosť mali rovnomerne prerozdeliť, aby každý prispel svojím podielom. Aj napriek tomu sú niektoré kluby aktívnejšie ako iné a majú tradíciu organizovať rovnaké preteky každý rok v podobnom termíne. Medzi takéto kluby patrí napríklad TKE (Karst) alebo BBA (Cesom). Práve tieto preteky s tradičným charakterom patria medzi najnavštevovanejšie (Graf 9). Pretekári si ich obľúbili a vždy vedia, čo môžu očakávať. Spôsobené je to najmä vďaka vybudovaniu si dlhoročnej tradície a kvality. Z grafu je tiež možné vidieť mierne klesajúcu tendenciu, čo sa týka počtu účastníkov na priebeh sezóny. Ku koncu sezóny býva menšia účasť na pretekoch, čo odzrkadľuje najmä nastavenie pretekárov. Po zimnej pauze sa všetci tešia na preteky, zatiaľ čo po lete sa účasť znižuje. Výnimku tvoria spomínané tradičné letné preteky.
 
-<img src="/images/graf9.png" alt="Graf 9" height="300">
-<img src="/images/graf10.png" alt="Graf 10" height="300">
+<img src="/images/graf9.png" alt="Graf 9" height="300"> <img src="/images/graf10.png" alt="Graf 10" height="300">
 *Graf 9: Bodový graf zobrazuje vzťah medzi počtom pretekárov a dátumom súťaže. Je možné vidieť jemne klesajúci trend počtu pretekárov s neskorším dátumom súťaže.*
 *Graf 10: Vizualizuje celkový počet súťaží v jednotlivých rokoch od 1999. Farebne kategorizuje súťaže na základe ich klasifikácie.
 V tomto prípade sa výrazne prejavila nekonzistentnosť dát v Informačnom systéme. Súťaže pred rokom 2018 neboli dôsledne kategorizované, čo spôsobilo zaradenie mnohých do skupiny „Iné“.
@@ -134,12 +134,14 @@ Z tohto dôvodu sú všetky ostatné analýzy robené až od roku 2018.*
 Každá sezóna je plánovaná tak, aby bol počet pretekov pomerne stabilný. Výrazný pokles nastal v rokoch 2020-2021, keď bol šport obmedzený kvôli pandémii COVID-19 (Graf 10). Dôsledky tohto poklesu sú viditeľné aj v prítomnosti, keď sa počet účastníkov stále nedostal na úroveň pred pandémiou. Dôvodov je viacero, pričom medzi najvýraznejšie patrí prerušená práca s mládežou, čo spôsobilo výrazné oslabenie mládežníckej základne najmä v aktuálnom veku 16-20 rokov (Graf 11). Taktiež niektoré kluby čelili finančným problémom či ľudia zmenili návyky a sociálne interakcie.
 
 <img src="/images/graf11.png" alt="Graf 11" height="300">
+
 *Graf 11: Histogram zobrazuje priemerné zastúpenie bežcov v jednotlivých súťažných kategóriách. Na osi x sú jednotlivé kategórie, na osi y je počet bežcov v každej vekovej skupine. Horizontálna zelená čara predstavuje celkový priemer.*
 
 Napriek všetkým týmto nepriaznivým faktorom sa zväz aj kluby snažia obnoviť pôvodne počty rôznymi iniciatívami ako sú rôzne promo akcie, školské preteky či náborové krúžky, ktoré majú za cieľ predstaviť tento šport verejnosti a získať väčšiu podporu.
 Okrem spomínaného faktu, že orientačný beh je často rodinným športom, je zaujímavý aj vzťah veku a počtu absolvovaných pretekov (Graf 12). Okrem mládežníckych kategórií sa najmä v tých starších nachádzajú stále aktívni pretekári, ktorí majú absolvovaných najviac pretekov. Môže sa to zdať samozrejmé, keďže mali viac času, ale v porovnaní s inými športami ide skôr o raritu. Aj to dokazuje, že je to skutočne šport pre všetky vekové kategórie a v budúcnosti má veľký potenciál.
 
 <img src="/images/graf12.png" alt="Graf 12" height="300">
+
 *Graf 12: Bodový graf vizualizujúci vzťah medzi vekom a počtom absolvovaných pretekov. Zaujímavosťou je vysoký počet absolvovaný pretekov u bežcov v starších kategóriách, čo dokazuje ich aktivitu aj neskoršom veku.*
 
 ---
