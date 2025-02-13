@@ -80,6 +80,13 @@ V súčasnosti je na Slovensku registrovaných 861 orientačných bežcov, prič
 Kategórie sú rozdelené podľa veku a pohlavia, pričom mladšie kategórie majú dvojročné intervaly a veteránske kategórie päťročné intervaly. Hlavnou kategóriou je W21/M21, ktorej najlepší pretekári tvoria jadro národnej reprezentácie a majú možnosť reprezentovať Slovensko na európskych či svetových podujatiach.
 Orientačný beh sa taktiež zaraďuje medzi športy, ktoré sa vyznačujú vyváženým zastúpením oboch pohlaví. Zastúpenie pohlaví v orientačnom behu na Slovensku ukazuje, že približne 60 % účastníkov sú muži a 40 % ženy (Graf 2). Orientačný beh je teda šport, ktorý aktívne podporuje rodovú rovnosť a poskytuje príležitosti pre rôzne vekové kategórie. 
 
+![graf1](/images/graf1.png)
+
+*Graf 1: Graf zobrazuje rozdelenie bežcov podľa vekových skupín, čím umožňuje pochopiť demografické zloženie bežcov a identifikovať, ktoré skupiny sú najpočetnejšie. Priemerný vek mužov a žien je uvedený v názve grafu, pričom priemerný vek mužov je o 3 roky vyšší.*
+
+![graf2](/images/graf2.png)
+*Graf 2: Vizualizuje rozdelenie mužov a žien v jednotlivých kluboch. Podiel žien a mužov je zobrazený ako stĺpce a horizontálne čiary predstavujú celkové priemery. Napriek väčšiemu podielu mužov, cca 60%, sa dá povedať, že orientačný beh patrí k športom, kde sú obe pohlavia rovnomerne zastúpené.*
+
 ### Kluby
 SZOŠ má momentálne 21 registrovaných členských klubov. Predstavujú lokálnu úroveň a všetky sú spolu pridružené k národnej úrovni riadiaceho orgánu SZOŠ. Kluby sú väčšinou otvorené pre všetkých záujemcov a v prípade záujmu je tak možné kontaktovať priamo klub v blízkosti. Kluby sú zväčša situované v krajských mestách pričom Bratislavský kraj má väčšinové zastúpenie nielen vo výrazne väčšom počte klubov, ale aj celkovom počte pretekárov (Graf 3). Zaujímavosťou je, že viac než polovica pretekárov pochádza len z 5 najväčších klubov (Graf 4). Zvyšné kluby tvoria len menšinové zastúpenie, pričom ich počet členov nepresahuje hranicu 50.
 
