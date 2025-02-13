@@ -81,7 +81,7 @@ Kategórie sú rozdelené podľa veku a pohlavia, pričom mladšie kategórie ma
 Orientačný beh sa taktiež zaraďuje medzi športy, ktoré sa vyznačujú vyváženým zastúpením oboch pohlaví. Zastúpenie pohlaví v orientačnom behu na Slovensku ukazuje, že približne 60 % účastníkov sú muži a 40 % ženy (Graf 2). Orientačný beh je teda šport, ktorý aktívne podporuje rodovú rovnosť a poskytuje príležitosti pre rôzne vekové kategórie. 
 
 <div style="display: flex; justify-content: space-around; align-items: flex-start;">
-<img src="/images/graf1.png" alt="Graf 1" width="300"> <img src="/images/graf2.png" alt="Graf 2" width="300">
+<img src="/images/graf1.png" alt="Graf 1" height="300"> <img src="/images/graf2.png" alt="Graf 2" height="300">
 
 *Graf 1: Graf zobrazuje rozdelenie bežcov podľa vekových skupín, čím umožňuje pochopiť demografické zloženie bežcov a identifikovať, ktoré skupiny sú najpočetnejšie.*  
 *Graf 2: Vizualizuje rozdelenie mužov a žien v jednotlivých kluboch. Podiel žien a mužov je zobrazený ako stĺpce a horizontálne čiary predstavujú celkové priemery.*
