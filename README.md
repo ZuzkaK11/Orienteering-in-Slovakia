@@ -80,20 +80,33 @@ V súčasnosti je na Slovensku registrovaných 861 orientačných bežcov, prič
 Kategórie sú rozdelené podľa veku a pohlavia, pričom mladšie kategórie majú dvojročné intervaly a veteránske kategórie päťročné intervaly. Hlavnou kategóriou je W21/M21, ktorej najlepší pretekári tvoria jadro národnej reprezentácie a majú možnosť reprezentovať Slovensko na európskych či svetových podujatiach.
 Orientačný beh sa taktiež zaraďuje medzi športy, ktoré sa vyznačujú vyváženým zastúpením oboch pohlaví. Zastúpenie pohlaví v orientačnom behu na Slovensku ukazuje, že približne 60 % účastníkov sú muži a 40 % ženy (Graf 2). Orientačný beh je teda šport, ktorý aktívne podporuje rodovú rovnosť a poskytuje príležitosti pre rôzne vekové kategórie. 
 
-<div style="display: flex; justify-content: space-around; align-items: flex-start;">
 <img src="/images/graf1.png" alt="Graf 1" height="300"> <img src="/images/graf2.png" alt="Graf 2" height="300">
 
-*Graf 1: Graf zobrazuje rozdelenie bežcov podľa vekových skupín, čím umožňuje pochopiť demografické zloženie bežcov a identifikovať, ktoré skupiny sú najpočetnejšie.*  
-*Graf 2: Vizualizuje rozdelenie mužov a žien v jednotlivých kluboch. Podiel žien a mužov je zobrazený ako stĺpce a horizontálne čiary predstavujú celkové priemery.*
+*Graf 1: Graf zobrazuje rozdelenie bežcov podľa vekových skupín, čím umožňuje pochopiť demografické zloženie bežcov a identifikovať, ktoré skupiny sú najpočetnejšie. Priemerný vek mužov a žien je uvedený v názve grafu, pričom priemerný vek mužov je o 3 roky vyšší.*  
+*Graf 2: Vizualizuje rozdelenie mužov a žien v jednotlivých kluboch. Podiel žien a mužov je zobrazený ako stĺpce a horizontálne čiary predstavujú celkové priemery.Napriek väčšiemu podielu mužov, cca 60%, sa dá povedať, že orientačný beh patrí k športom, kde sú obe pohlavia rovnomerne zastúpené.*
 
 
 
 ### Kluby
+
+<img src="/images/graf3.png" alt="Graf 3" height="300">
+*Graf 3: Interaktívna mapa vyobrazujúca sídla jednotlivých klubov. Priemer kruhu reprezentuje počet jednotlivých členov v klube.*
+
 SZOŠ má momentálne 21 registrovaných členských klubov. Predstavujú lokálnu úroveň a všetky sú spolu pridružené k národnej úrovni riadiaceho orgánu SZOŠ. Kluby sú väčšinou otvorené pre všetkých záujemcov a v prípade záujmu je tak možné kontaktovať priamo klub v blízkosti. Kluby sú zväčša situované v krajských mestách pričom Bratislavský kraj má väčšinové zastúpenie nielen vo výrazne väčšom počte klubov, ale aj celkovom počte pretekárov (Graf 3). Zaujímavosťou je, že viac než polovica pretekárov pochádza len z 5 najväčších klubov (Graf 4). Zvyšné kluby tvoria len menšinové zastúpenie, pričom ich počet členov nepresahuje hranicu 50.
+
+<img src="/images/graf4.png" alt="Graf 4" height="300"> <img src="/images/graf5.png" alt="Graf 5" height="300">
+
+*Graf 4: Z grafu je možné vidieť, ktoré kluby majú najviac členov. Každý farebný segment reprezentuje počet bežcov v danom klube a farby sú priradené jednotlivým klubom.*  
+*Graf 5: Koláčový graf zobrazuje počet súťaží, ktoré organizovali jednotlivé kluby od roku 2018 do 2024. Pomáha identifikovať, ktoré kluby sú najaktívnejšie v organizovaní súťaží.*
 
 Kluby sú taktiež zodpovedné za organizovanie pretekov, pričom táto úloha by sa mala počas roka a jednotlivých sezón striedať, aby sa rovnomerne zapojil každý klub. Celkový počet organizovaných pretekov, však môže byť skresľujúci nakoľko kluby sú rôzne veľké (Graf 5). Je rozdiel, či národnú súťaž organizuje klub s 10 členmi alebo vyše 100, kde sa práca prerozdelí. Z tohto dôvodu Graf 6 vyobrazuje počet členov na jednu organizovanú súťaž (čím vyššie číslo, tým horšia vizitka pre klub). Z grafu môžeme vidieť veľký nepomer, pričom až 7 klubov neorganizovalo za posledných 6 rokov žiadnu súťaž. V tomto prípade ide o malé kluby, ale aj toto môže byť predmetom diskusie a zefektívnenia spolupráce do budúcna.
 
 Zaujímavým meradlom môže byť aj opačný pohľad, keď sa zameriame na aktivitu členov vzhľadom na absolvované preteky. Aj pri tomto porovnaní je možné vidieť, že 3 kluby sú takmer neaktívne (Graf 7). Rozdiely medzi klubmi sú o niečo menšie, avšak celkovo sa dá povedať, že priemerná účasť na pretekoch je pomerne nízka, na to, že každoročne býva v priemere 18 celoslovenských pretekov. Aj toto odzrkadľuje situáciu v kluboch, kde je registrovaných veľa neaktívnych alebo skôr hobby bežcov, ktorí sa zúčastňujú pretekov len príležitostne a tým znižujú celkový priemer.
+
+<img src="/images/graf6.png" alt="Graf 6" height="300"> <img src="/images/graf7.png" alt="Graf 7" height="300">
+
+*Graf 6: Stĺpcový graf vizualizujúci aktivitu jednotlivých klubov pri organizovaní súťaží. Výška stĺpcov reprezentuje počet členov na jednu zorganizovanú súťaž v období 2018-2024.*  
+*Graf 7: Stĺpcový graf zobrazuje aktivitu členov, ktorá je vyjadrená ako priemerný počet účastí na pretekoch pre jedného člena za jeden rok. (obdobie 2018-2024).*
 
 ### Súťaže
 Slovensko má ideálne podmienky na orientačný beh, vrátane krásnej prírody s rozmanitým terénom a kvalitných kartografov, ktorí vytvárajú mapy na svetovej úrovni. Už v minulosti sa tu úspešne zorganizovalo niekoľko významných medzinárodných či svetových podujatí. Naposledy sa tak stalo v roku 2023, kedy Košice hostili Veteránske majstrovstvá sveta.
