@@ -3,32 +3,7 @@
 # Správa projektu: Analýza orientačného behu na Slovensku
 
 ## Autor: Zuzana Kováčová  
-**Používateľské ID:** kovacova566  
 **Odbor:** DAV  
-
----
-
-## OBSAH
-
-1. [Úvod](#úvod)  
-   1.1 [Pozadie](#pozadie)  
-   1.2 [Ciele projektu](#ciele-projektu)  
-   1.3 [Zdroje údajov](#zdroje-údajov)  
-2. [Postup](#postup)  
-   2.1 [Zhromažďovanie údajov](#zhromažďovanie-údajov)  
-       a) [Získavanie údajov o kluboch a pretekároch](#získavanie-údajov-o-kluboch-a-pretekároch)  
-       b) [Získavanie údajov o súťažiach](#získavanie-údajov-o-súťažiach)  
-       c) [Získavanie údajov o mestách](#získavanie-údajov-o-mestách)  
-   2.2 [Spracovanie údajov](#spracovanie-údajov)  
-   2.3 [Vizualizácia a analýza údajov](#vizualizácia-a-analýza-údajov)  
-3. [Výsledky analýzy](#výsledky-analýzy)  
-   3.1 [Bežci](#bežci)  
-   3.2 [Kluby](#kluby)  
-   3.3 [Súťaže](#súťaže)  
-4. [Záver](#záver)  
-5. [Zdroje](#zdroje)  
-
----
 
 ## Úvod
 
