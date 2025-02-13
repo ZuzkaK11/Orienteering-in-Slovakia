@@ -1,0 +1,126 @@
+Project Protocol
+----------------
+
+Author: Zuzana Kovacova
+Userid: kovacova566
+-----------------------
+
+Submitted files
+---------------
+
+DATABASE SETUP:
+• create_db.py – Sets up schema for an SQLite database named orienteering.db 
+• orienteering.db - SQLite database, which includes following tables: 
+1.      Runners
+        •       reg_number: Registration number (Primary Key, TEXT)
+        •	name: Name of the runner (TEXT)
+        •	age: Age of the runner (INTEGER)
+        •	gender: Gender of the runner (TEXT)
+        •	club: Club membership (TEXT)
+        •       num_competitions: Number of competitions participated in (INTEGER)
+2.	Clubs
+        •	shortcut: Club shortcut (Primary Key, TEXT)
+        •	name: Full name of the club (TEXT)
+        •	members: Number of members in the club (INTEGER)
+        •	city: City where the club is based (TEXT)
+3.	Competitions
+        •	id: Unique identifier for each competition (Primary Key, INTEGER AUTOINCREMENT)
+        •	event_id: Event identifier (INTEGER)
+        •	name: Name of the competition (TEXT)
+        •	date: Date of the competition (DATE)
+        •	classification: Classification of the competition (TEXT)
+        •	runners: Number of runners participating (INTEGER)
+        •	place: Location of the competition (TEXT)
+        •	org: Organizing entity (TEXT)
+4.	Competition_categories: 
+        •	id: Unique identifier for each category (Primary Key, INTEGER)
+        •	W10 to W70: Categories for female participants by age group (INTEGER)
+        •	M10 to M70: Categories for male participants by age group (INTEGER)
+        •	MWR: Mixed or relay categories (INTEGER)
+5.      Cities:
+        •	city: Name of the city (Primary Key, TEXT)
+        •	lat: Latitude of the city (REAL)
+        •	lng: Longitude of the city (REAL)
+        •	country: Country where the city is located (TEXT)
+        •	iso2: Two-letter country code (TEXT)
+        •	admin_name: Name of the administrative region or area (TEXT)
+        •	capital: Type of capital city (TEXT)
+        •	population: Total population of the city (INTEGER)
+        •	population_proper: Population of the city without surrounding areas (INTEGER)
+
+
+DATA INGESTION:
+• gps_location_table.py - Reads data from an Excel file named sk.xlsx and insert them into the 'cities' table in the database 
+• sk.xlsx – Contains GPS location data for Slovak cities.
+
+WEB SCRAPING:
+• read_clubs.py – Scrapes a webpage ‘https://is.orienteering.sk/clubs/’ containing information about orienteering clubs. 
+                  Website structure has a table format with each row containing club details. 
+                  It extracts club_id and processes each club's information by calling an external script 'write_club.py'.
+• write_club.py – Fetches detailed information about an orienteering club and its runners from a provided URL, 
+                  parses the relevant data, and writes it into the 'runners' and 'clubs' tables in SQLite database.
+• read_competitions.py – Fetches detailed information about orienteering competitions from a website https://is.orienteering.sk/competitions/. 
+                         It scrapes the link to competition site, and delegates the processing of the data to external scripts ('write_competition_old.py' and 'write_competition.py').
+• write_competition.py - Fetches detailed information about specific orienteering competition.
+                         The starting URL and the organizer's name are provided as command-line arguments. 
+                         It parses the relevant data, and stores it in a SQLite database table 'competitions'. 
+                         It also calls an external script to process competition entries for each stage. 
+• write_competition_old.py – Simmilar script as previous, but for older competitions, which have different format of website and no entries are available. 
+                            In this acase are also competition details (date, name, place, and organizer) provided as command-line arguments.
+• write_competition_entries.py – Processes competition entries of each given competition site https://is.orienteering.sk/competitions/"+competition_id+'/entries',
+                                parses runner participations, updates their competition counts, and updates the category data in the SQLite database.
+
+WEB APPLICATION:
+• main.py - Implements a Flask web application for displaying data stored in a SQLite database. 
+            It processes and visualizes various metrics such as club activity, gender distribution, age distribution, competition classifications, and more. 
+            The data is rendered in HTML templates: 'main.html', 'club.html', 'comopetition.html' to provide a user-friendly interface for exploring the orienteering data.
+
+HTML TEMPLATES:
+•  /templates/main.html - Visualization of overall data.
+•  /templates/club.html - Club information.
+•  /templates/competition.html - Competition information and membership data.
+•  /static/styles.css - Styling for HTML elements.
+
+DOCUMENTATION:
+•  Protocol.txt
+•  Report.pdf
+
+
+Used technologies:
+•  Data Processing and Analysis
+        • Python Libraries: Pandas, NumPy
+•  Web Scraping and Data Parsing
+        • Python Libraries: BeautifulSoup, Requests, re, json
+•  Web Application Development        
+        • Flask: render_template, g
+•  Database Management
+        • SQLite: sqlite3
+•  Data Visualization
+        • JavaScript using Google Charts
+
+
+Steps with Commands 
+-------------------
+python3 create_db.py
+python3 gps_location_table.py
+python3 read_clubs.py
+python3 read_competitions.py
+
+
+How to run Flask Application (+equivalent in Windows)
+----------------------------
+export FLASK_APP=main.py        / $env:FLASK_APP = "main.py"
+export FLASK_ENV=development    / $env:FLASK_DEBUG = "1"
+flask run --port=PORT           / flask run --port=PORT
+
+ssh -L PORT:localhost:PORT username@vyuka.compbio.fmph.uniba.sk         /  curl http://localhost:PORT
+http://localhost:PORT/
+
+
+Resources
+---------
+https://is.orienteering.sk
+https://simplemaps.com/data/sk-cities
+https://developers.google.com/chart/interactive/docs/gallery
+
+
