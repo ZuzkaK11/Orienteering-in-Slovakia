@@ -42,6 +42,7 @@ Prvým krokom bolo získanie dát o kluboch z Informačného systému orientačn
 
 #### b) Získavanie údajov o súťažiach
 Informačný systém obsahuje údaje o súťažiach od roku 2018. Súťaže z obdobia 1999-2018 sú síce v systéme registrované, avšak nie s kompletnými údajmi, pretože v tom čase tento online systém ešte nefungoval. Z tohto dôvodu som na spracovanie súťaží použila dva rôzne prístupy. V oboch prípadoch som získavala údaje len z národných podujatí, keďže oblastné súťaže môžu využívať upravené pravidlá pre kategórie a klasifikáciu. 
+
 V prvom prípade som prešla cez všetky súťaže, extrahovala prihlásených pretekárov a tieto informácie zapísala do tabuliek `competitions` a `competition_categories`. V druhom prípade som pri starších súťažiach nespracovávala prihlášky. Z tohto dôvodu sú niektoré analýzy robené až od roku 2018, kedy sú údaje kompletné a presné.
 
 
@@ -88,6 +89,7 @@ Zaujímavým meradlom môže byť aj opačný pohľad, keď sa zameriame na akti
 
 ### Súťaže
 Slovensko má ideálne podmienky na orientačný beh, vrátane krásnej prírody s rozmanitým terénom a kvalitných kartografov, ktorí vytvárajú mapy na svetovej úrovni. Už v minulosti sa tu úspešne zorganizovalo niekoľko významných medzinárodných či svetových podujatí. Naposledy sa tak stalo v roku 2023, kedy Košice hostili Veteránske majstrovstvá sveta.
+
 Orientačný beh sa odohráva v rôznych prostrediach – od lesov po mestské centrá, v každom ročnom období. Ponúka rôzne formy a disciplíny, vrátane klasických pretekov na dlhé a stredné trate, šprintu, nočných pretekov či pretekov s rôznymi formami prepojenia iných športov, ako napríklad orientácia na horských bicykloch alebo lyžiach. Najnovšou disciplínou je knock-out šprint, ktorý sa skladá z viacerých vyraďovacích kôl a je tak atraktívnejší najmä pre divákov. Všetky disciplíny však spája spoločný cieľ, a to nájsť všetky kontrolné body v určenom poradí a byť najrýchlejší.
 Obľúbenosť disciplín závisí najmä od preferencií jednotlivých bežcov (Graf 8). V minulosti sa pretekalo len na dlhých a stredných tratiach, no dnes sa tešia obľúbenosti aj šprinty, ktoré sú typické svojou dynamickosťou a mestským terénom.
 
