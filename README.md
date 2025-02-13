@@ -2,9 +2,6 @@
 
 # Správa projektu: Analýza orientačného behu na Slovensku
 
-## Autor: Zuzana Kováčová  
-**Odbor:** DAV  
-
 ## Úvod
 
 ### Pozadie
