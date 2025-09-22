@@ -1,155 +1,150 @@
-# Orienteering-in-Slovakia
+# Orienteering in Slovakia
 
-# Správa projektu: Analýza orientačného behu na Slovensku
+# Project Report: Analysis of Orienteering in Slovakia
 
-## Úvod
+## Introduction
 
-### Pozadie
-Orientačný beh je športová disciplína, ktorá kombinuje fyzickú kondíciu s navigačnými schopnosťami. Bežci sa pohybujú po rôznorodom a zvyčajne neznámom teréne, pričom úlohou je prebehnúť podľa mapy a buzoly trať za čo najkratší čas. Trate nie sú vopred známe a ani vyznačené v teréne. Sú tam umiestnené iba kontrolné stanovišťa, označené oranžovo-bielym lampiónom, ktoré musí bežec pomocou mapy v stanovenom poradí nájsť. 
+### Background
+Orienteering is a sport that combines physical fitness with navigation skills. Runners move through varied and often unfamiliar terrain, with the goal of completing a course using a map and compass in the shortest possible time. Courses are neither marked in advance nor visible in the terrain. Only control points, marked with orange-and-white flags, are placed along the route, which runners must locate in a specified order using their map.
 
-Mapy používané v orientačnom behu sú špeciálne navrhnuté tak, aby poskytovali podrobné informácie potrebné pre rýchle a presné navigovanie v teréne. Tento šport vznikol v Škandinávii na konci 19. storočia, kde sa v počiatkoch využíval ako súčasť vojenského výcviku. Odvtedy sa rozšíril do celého sveta. V súčasnosti sa organizujú súťaže na všetkých úrovniach, od miestnych pretekov až po svetové šampionáty.
+Orienteering maps are specially designed to provide detailed information necessary for fast and accurate navigation in the terrain. The sport originated in Scandinavia at the end of the 19th century, initially used as part of military training. Since then, it has spread worldwide. Today, competitions are organized at all levels, from local races to world championships.
 
-Okrem fyzickej zdatnosti je významným aspektom orientačného behu aj jeho prínos k mentálnej odolnosti. Trasa totiž nie je medzi kontrolnými bodmi vopred určená a pretekári si musia vybrať vlastnú cestu. Tento fakt núti bežcov neustále robiť rozhodnutia na základe terénnych podmienok a navigačných výziev, čo podporuje rýchle myslenie a schopnosť sústrediť sa pod tlakom. Výsledok pretekára teda nezávisí len od rýchlosti behu, ale aj od optimálneho výberu postupov medzi kontrolami či rýchlosti a správnosti rozhodovania.
+Beyond physical fitness, a key aspect of orienteering is its contribution to mental resilience. The route between control points is not predetermined, and competitors must choose their own path. This forces runners to make continuous decisions based on terrain conditions and navigational challenges, promoting quick thinking and the ability to focus under pressure. A competitor's result thus depends not only on running speed but also on the optimal choice of routes between controls and the speed and accuracy of decision-making.
 
-Navyše, orientačný beh sa často koná v zaujímavých prírodných lokalitách či členitých historických mestách, čo dodáva tomuto športu ďalší špecifický aspekt.
+Additionally, orienteering often takes place in interesting natural landscapes or historic urban areas, adding another unique aspect to the sport.
 
-Motiváciou pre tento projekt bolo zhromaždiť, spracovať, analyzovať a vizualizovať dáta, čo by umožnilo nielen mne, ale aj ostatným ľuďom lepšie pochopiť fungovanie tohto športu, ktorému sa aktívne venujem.
-
----
-
-### Ciele projektu
-Na Slovensku je orientačný beh organizovaný a regulovaný športovými klubmi a Slovenským zväzom orientačných športov. Informácie o rozložení bežcov, účastiach na súťažiach, dlhodobých trendoch či angažovaní jednotlivých klubov môžu poskytnúť cenné informácie pre organizátorov, účastníkov a nadšencov tohto športu v budúcom rozvoji. Jednoduchá webová aplikácia s interaktívnymi grafmi môže zároveň pomôcť pri popularizácii orientačného behu medzi verejnosťou.
+The motivation for this project was to collect, process, analyze, and visualize data, allowing both myself and others to better understand the functioning of a sport I actively participate in.
 
 ---
 
-### Zdroje údajov
-Dáta pre tento projekt boli získané z nasledujúcich zdrojov:
-- Oficiálna webová stránka Informačného systému Slovenského zväzu orientačných športov ([IS SZOŠ](https://is.orienteering.sk))
-- GPS koordináty slovenských miest z Excel súboru dostupného na stránke [SimpleMaps](https://simplemaps.com/data/sk-cities)
+### Project Goals
+In Slovakia, orienteering is organized and regulated by sports clubs and the Slovak Orienteering Federation. Information about the distribution of runners, competition participation, long-term trends, and club engagement can provide valuable insights for organizers, participants, and enthusiasts for future development. A simple web application with interactive charts can also help promote orienteering to the public.
 
 ---
 
-## Postup
-
-### Zhromažďovanie údajov
-Na získanie údajov som použila rôzne techniky Web Scrapingu a spracovania dát z externých zdrojov. Pracovala som s pythonovskými knižnicami ako napríklad BeautifulSoup, Requst, Pandas či NumPy. Tento proces zahŕňal viaceré kroky a rozdelenie do viacerých skriptov, čím sa mala zabezpečiť úplnosť a presnosť získaných informácií.
-
-#### a) Získavanie údajov o kluboch a pretekároch
-Prvým krokom bolo získanie dát o kluboch z Informačného systému orientačných športov. Tento krok bol kľúčový, pretože klubové ID bolo potrebné na prepojenie jednotlivých databáz. Pomocou skriptu `read_clubs.py` som extrahovala linky na jednotlivé kluby. Tieto linky som spracovala pomocou skriptu `write_club.py`, ktorý získal detailné informácie o každom klube a jeho členoch. Spracované údaje boli zapisované do tabuliek `runners` a `clubs`.
-
-#### b) Získavanie údajov o súťažiach
-Informačný systém obsahuje údaje o súťažiach od roku 2018. Súťaže z obdobia 1999-2018 sú síce v systéme registrované, avšak nie s kompletnými údajmi, pretože v tom čase tento online systém ešte nefungoval. Z tohto dôvodu som na spracovanie súťaží použila dva rôzne prístupy. V oboch prípadoch som získavala údaje len z národných podujatí, keďže oblastné súťaže môžu využívať upravené pravidlá pre kategórie a klasifikáciu. 
-
-V prvom prípade som prešla cez všetky súťaže, extrahovala prihlásených pretekárov a tieto informácie zapísala do tabuliek `competitions` a `competition_categories`. V druhom prípade som pri starších súťažiach nespracovávala prihlášky. Z tohto dôvodu sú niektoré analýzy robené až od roku 2018, kedy sú údaje kompletné a presné.
-
-
-#### c) Získavanie údajov o mestách
-Dáta GPS súradníc slovenských miest boli extrahované z Excel súboru dostupného na [SimpleMaps](https://simplemaps.com/data/sk-cities). Tieto údaje boli importované do tabuľky `cities`.
+### Data Sources
+Data for this project were obtained from the following sources:
+- The official website of the Slovak Orienteering Federation Information System ([IS SZOŠ](https://is.orienteering.sk))
+- GPS coordinates of Slovak cities from an Excel file available on [SimpleMaps](https://simplemaps.com/data/sk-cities)
 
 ---
 
-### Spracovanie údajov
-Na uloženie údajov som použila SQL databázu `orienteering.db`. Samotné spracovávanie, čistenie údajov či správne formátovanie bolo vykonávané už priamo pri vkladaní dát do tabuliek. Jej schéma zahŕňala tabuľky:  
-- `Runners` (informácie o bežcoch)  
-- `Clubs` (detaily o kluboch)  
-- `Competitions` (údaje o súťažiach)  
-- `Competition_categories` (kategórie pre súťaže)  
-- `Cities` (údaje o mestách)  
+## Procedure
+
+### Data Collection
+Data were collected using web scraping and processing techniques from external sources. I used Python libraries such as BeautifulSoup, Requests, Pandas, and NumPy. This process involved multiple steps and scripts to ensure the completeness and accuracy of the data.
+
+#### a) Collecting Club and Runner Data
+The first step was to obtain data about clubs from the Orienteering Information System. This step was crucial, as club IDs were needed to link different databases. Using the script `read_clubs.py`, I extracted links to individual clubs. These links were processed with the `write_club.py` script, which retrieved detailed information about each club and its members. The processed data were stored in the `runners` and `clubs` tables.
+
+#### b) Collecting Competition Data
+The information system contains competition data from 2018 onwards. Competitions from 1999–2018 are registered but not fully detailed because the online system was not fully operational at that time. Therefore, two different approaches were used for processing competitions. In both cases, data were collected only from national events, as regional competitions may use modified rules for categories and classification.
+
+In the first case, all competitions were processed, registered runners were extracted, and this information was stored in the `competitions` and `competition_categories` tables. For older competitions, participant registrations were not processed. For this reason, some analyses are only performed from 2018, when the data are complete and accurate.
+
+#### c) Collecting City Data
+GPS coordinates of Slovak cities were extracted from the Excel file available on [SimpleMaps](https://simplemaps.com/data/sk-cities) and imported into the `cities` table.
 
 ---
 
-### Vizualizácia a analýza údajov
-Na vizualizáciu dát som vytvorila webovú aplikáciu vo frameworku Flask s tromi HTML šablónami:
-- `main.html`: Hlavná stránka obsahuje kľúčové metriky ako vizualizácia aktivity klubov, rodového a vekového rozloženia bežcov či klasifikácie súťaží. Hneď na začiatku sa nachádza zoznam jednotlivých klubov, odkiaľ sa dá prekliknúť na stránku každého klubu.
-- `club.html`: Na stránke každého klubu sú jeho detailné informácie a tiež grafy vizualizujúce distribúciu členov podľa pohlavia, veku a organizovanie súťaží od roku 2018. Tieto súťaže sú hneď vedľa aj vypísané a na každú sa dá prekliknúť.
-- `competition.html`: Tu sa nachádzajú informácie o súťaži a graf vizualizujúci pretekárov v jednotlivých kategóriách.
-
-Na vizualizáciu dát a mapy som použila nástroje a grafy z knižnice Google Charts a Leaflet. Tým som docielila interaktívny prístup k dátam a možnosť aktualizácie údajov.
-V analýze som sa zamerala najmä na grafy na úvodnej stránke, nakoľko práve tieto poskytujú komplexný pohľad na orientačný beh na Slovensku a umožňujú identifikovať kľúčové trendy a vzťahy medzi klubmi, súťažami a bežcami.
-
----
-
-## Výsledky analýzy
-
-### Bežci
-V súčasnosti je na Slovensku registrovaných 861 orientačných bežcov, pričom vekové rozloženie ja naozaj veľmi široké (Graf 1). Často sa orientačný beh označuje aj ako rodinný šport, pretože umožňuje účasť všetkých členov rodiny v rôznych vekových kategóriách. Takže na preteky môže prísť celá rodina a každý beží vo svojej kategórií. Väčšinou sú zaraďované aj kategórie ako OPEN a N, určené pre verejnosť a začiatočníkov, kde sa môžu na jednoduchých tratiach naučiť základy.
-
-Kategórie sú rozdelené podľa veku a pohlavia, pričom mladšie kategórie majú dvojročné intervaly a veteránske kategórie päťročné intervaly. Hlavnou kategóriou je W21/M21, ktorej najlepší pretekári tvoria jadro národnej reprezentácie a majú možnosť reprezentovať Slovensko na európskych či svetových podujatiach.
-Orientačný beh sa taktiež zaraďuje medzi športy, ktoré sa vyznačujú vyváženým zastúpením oboch pohlaví. Zastúpenie pohlaví v orientačnom behu na Slovensku ukazuje, že približne 60 % účastníkov sú muži a 40 % ženy (Graf 2). Orientačný beh je teda šport, ktorý aktívne podporuje rodovú rovnosť a poskytuje príležitosti pre rôzne vekové kategórie. 
-
-<img src="/images/graf1.png" alt="Graf 1" height="300"> <img src="/images/graf2.png" alt="Graf 2" height="300">
-
-*Graf 1: Graf zobrazuje rozdelenie bežcov podľa vekových skupín, čím umožňuje pochopiť demografické zloženie bežcov a identifikovať, ktoré skupiny sú najpočetnejšie. Priemerný vek mužov a žien je uvedený v názve grafu, pričom priemerný vek mužov je o 3 roky vyšší.*  
-*Graf 2: Vizualizuje rozdelenie mužov a žien v jednotlivých kluboch. Podiel žien a mužov je zobrazený ako stĺpce a horizontálne čiary predstavujú celkové priemery.Napriek väčšiemu podielu mužov, cca 60%, sa dá povedať, že orientačný beh patrí k športom, kde sú obe pohlavia rovnomerne zastúpené.*
-
-
-
-### Kluby
-
-<img src="/images/graf3.png" alt="Graf 3" height="300">
-*Graf 3: Interaktívna mapa vyobrazujúca sídla jednotlivých klubov. Priemer kruhu reprezentuje počet jednotlivých členov v klube.*
-
-SZOŠ má momentálne 21 registrovaných členských klubov. Predstavujú lokálnu úroveň a všetky sú spolu pridružené k národnej úrovni riadiaceho orgánu SZOŠ. Kluby sú väčšinou otvorené pre všetkých záujemcov a v prípade záujmu je tak možné kontaktovať priamo klub v blízkosti. Kluby sú zväčša situované v krajských mestách pričom Bratislavský kraj má väčšinové zastúpenie nielen vo výrazne väčšom počte klubov, ale aj celkovom počte pretekárov (Graf 3). Zaujímavosťou je, že viac než polovica pretekárov pochádza len z 5 najväčších klubov (Graf 4). Zvyšné kluby tvoria len menšinové zastúpenie, pričom ich počet členov nepresahuje hranicu 50.
-
-<img src="/images/graf4.png" alt="Graf 4" height="300"> <img src="/images/graf5.png" alt="Graf 5" height="300">
-
-*Graf 4: Z grafu je možné vidieť, ktoré kluby majú najviac členov. Každý farebný segment reprezentuje počet bežcov v danom klube a farby sú priradené jednotlivým klubom.*  
-*Graf 5: Koláčový graf zobrazuje počet súťaží, ktoré organizovali jednotlivé kluby od roku 2018 do 2024. Pomáha identifikovať, ktoré kluby sú najaktívnejšie v organizovaní súťaží.*
-
-Kluby sú taktiež zodpovedné za organizovanie pretekov, pričom táto úloha by sa mala počas roka a jednotlivých sezón striedať, aby sa rovnomerne zapojil každý klub. Celkový počet organizovaných pretekov, však môže byť skresľujúci nakoľko kluby sú rôzne veľké (Graf 5). Je rozdiel, či národnú súťaž organizuje klub s 10 členmi alebo vyše 100, kde sa práca prerozdelí. Z tohto dôvodu Graf 6 vyobrazuje počet členov na jednu organizovanú súťaž (čím vyššie číslo, tým horšia vizitka pre klub). Z grafu môžeme vidieť veľký nepomer, pričom až 7 klubov neorganizovalo za posledných 6 rokov žiadnu súťaž. V tomto prípade ide o malé kluby, ale aj toto môže byť predmetom diskusie a zefektívnenia spolupráce do budúcna.
-
-Zaujímavým meradlom môže byť aj opačný pohľad, keď sa zameriame na aktivitu členov vzhľadom na absolvované preteky. Aj pri tomto porovnaní je možné vidieť, že 3 kluby sú takmer neaktívne (Graf 7). Rozdiely medzi klubmi sú o niečo menšie, avšak celkovo sa dá povedať, že priemerná účasť na pretekoch je pomerne nízka, na to, že každoročne býva v priemere 18 celoslovenských pretekov. Aj toto odzrkadľuje situáciu v kluboch, kde je registrovaných veľa neaktívnych alebo skôr hobby bežcov, ktorí sa zúčastňujú pretekov len príležitostne a tým znižujú celkový priemer.
-
-<img src="/images/graf6.png" alt="Graf 6" height="300"> <img src="/images/graf7.png" alt="Graf 7" height="300">
-
-*Graf 6: Stĺpcový graf vizualizujúci aktivitu jednotlivých klubov pri organizovaní súťaží. Výška stĺpcov reprezentuje počet členov na jednu zorganizovanú súťaž v období 2018-2024.*  
-*Graf 7: Stĺpcový graf zobrazuje aktivitu členov, ktorá je vyjadrená ako priemerný počet účastí na pretekoch pre jedného člena za jeden rok. (obdobie 2018-2024).*
-
-### Súťaže
-Slovensko má ideálne podmienky na orientačný beh, vrátane krásnej prírody s rozmanitým terénom a kvalitných kartografov, ktorí vytvárajú mapy na svetovej úrovni. Už v minulosti sa tu úspešne zorganizovalo niekoľko významných medzinárodných či svetových podujatí. Naposledy sa tak stalo v roku 2023, kedy Košice hostili Veteránske majstrovstvá sveta.
-
-Orientačný beh sa odohráva v rôznych prostrediach – od lesov po mestské centrá, v každom ročnom období. Ponúka rôzne formy a disciplíny, vrátane klasických pretekov na dlhé a stredné trate, šprintu, nočných pretekov či pretekov s rôznymi formami prepojenia iných športov, ako napríklad orientácia na horských bicykloch alebo lyžiach. Najnovšou disciplínou je knock-out šprint, ktorý sa skladá z viacerých vyraďovacích kôl a je tak atraktívnejší najmä pre divákov. Všetky disciplíny však spája spoločný cieľ, a to nájsť všetky kontrolné body v určenom poradí a byť najrýchlejší.
-Obľúbenosť disciplín závisí najmä od preferencií jednotlivých bežcov (Graf 8). V minulosti sa pretekalo len na dlhých a stredných tratiach, no dnes sa tešia obľúbenosti aj šprinty, ktoré sú typické svojou dynamickosťou a mestským terénom.
-
-<img src="/images/graf8.png" alt="Graf 8" height="300">
-
-*Graf 8: Horizontálny stĺpcový graf zobrazuje obľúbenosť jednotlivých disciplín. Na osi y sú názvy jednotlivých disciplín, na osi x priemerné počty pretekárov na jednu súťaž.*
-
-Každoročne sa organizuje veľa rôznych súťaží. V rámci Slovenska sú rozdelené na oblastné, školské a celoslovenské. V analýze som sa venovala práve celoslovenským pretekom, nakoľko na školských sa zúčastňujú aj neregistrovaní bežci a pri oblastných sa pravidlá klasifikácie a rozdelenia kategórií mierne líšia.
-
-Celoslovenské preteky zahŕňajú Slovenské rebríčky a majstrovstvá Slovenska. Majstrovstvá Slovenska sa pre každú disciplínu konajú raz za sezónu, zatiaľ čo Slovenské rebríčky tvoria zvyšok. V oboch prípadoch sa získavajú body, ktoré sa počítajú do celoslovenského rankingu.
-
-Počas sezóny, ktorá trvá približne od marca do konca novembra, sú preteky rozdelené zväčša rovnomerne. Výnimkou sú letné prázdniny kedy ich je menej, pretože pretekári často cestujú na medzinárodné preteky a sústredenia do zahraničných terénov. Organizačnú štruktúru pretekov na Slovensku tvoria samotné kluby, a preto by si túto povinnosť mali rovnomerne prerozdeliť, aby každý prispel svojím podielom. Aj napriek tomu sú niektoré kluby aktívnejšie ako iné a majú tradíciu organizovať rovnaké preteky každý rok v podobnom termíne. Medzi takéto kluby patrí napríklad TKE (Karst) alebo BBA (Cesom). Práve tieto preteky s tradičným charakterom patria medzi najnavštevovanejšie (Graf 9). Pretekári si ich obľúbili a vždy vedia, čo môžu očakávať. Spôsobené je to najmä vďaka vybudovaniu si dlhoročnej tradície a kvality. Z grafu je tiež možné vidieť mierne klesajúcu tendenciu, čo sa týka počtu účastníkov na priebeh sezóny. Ku koncu sezóny býva menšia účasť na pretekoch, čo odzrkadľuje najmä nastavenie pretekárov. Po zimnej pauze sa všetci tešia na preteky, zatiaľ čo po lete sa účasť znižuje. Výnimku tvoria spomínané tradičné letné preteky.
-
-<img src="/images/graf9.png" alt="Graf 9" height="300"> <img src="/images/graf10.png" alt="Graf 10" height="300">
-*Graf 9: Bodový graf zobrazuje vzťah medzi počtom pretekárov a dátumom súťaže. Je možné vidieť jemne klesajúci trend počtu pretekárov s neskorším dátumom súťaže.*
-*Graf 10: Vizualizuje celkový počet súťaží v jednotlivých rokoch od 1999. Farebne kategorizuje súťaže na základe ich klasifikácie.
-V tomto prípade sa výrazne prejavila nekonzistentnosť dát v Informačnom systéme. Súťaže pred rokom 2018 neboli dôsledne kategorizované, čo spôsobilo zaradenie mnohých do skupiny „Iné“.
-Taktiež pre roky 2005-2006 je zaznamenaný výrazný pokles. Pri hľadaní príčiny, som zistila, že veľa súťaží z tohto obdobia tam nie je jednoducho nahratých.
-Z tohto dôvodu sú všetky ostatné analýzy robené až od roku 2018.*
-
-Každá sezóna je plánovaná tak, aby bol počet pretekov pomerne stabilný. Výrazný pokles nastal v rokoch 2020-2021, keď bol šport obmedzený kvôli pandémii COVID-19 (Graf 10). Dôsledky tohto poklesu sú viditeľné aj v prítomnosti, keď sa počet účastníkov stále nedostal na úroveň pred pandémiou. Dôvodov je viacero, pričom medzi najvýraznejšie patrí prerušená práca s mládežou, čo spôsobilo výrazné oslabenie mládežníckej základne najmä v aktuálnom veku 16-20 rokov (Graf 11). Taktiež niektoré kluby čelili finančným problémom či ľudia zmenili návyky a sociálne interakcie.
-
-<img src="/images/graf11.png" alt="Graf 11" height="300">
-
-*Graf 11: Histogram zobrazuje priemerné zastúpenie bežcov v jednotlivých súťažných kategóriách. Na osi x sú jednotlivé kategórie, na osi y je počet bežcov v každej vekovej skupine. Horizontálna zelená čara predstavuje celkový priemer.*
-
-Napriek všetkým týmto nepriaznivým faktorom sa zväz aj kluby snažia obnoviť pôvodne počty rôznymi iniciatívami ako sú rôzne promo akcie, školské preteky či náborové krúžky, ktoré majú za cieľ predstaviť tento šport verejnosti a získať väčšiu podporu.
-Okrem spomínaného faktu, že orientačný beh je často rodinným športom, je zaujímavý aj vzťah veku a počtu absolvovaných pretekov (Graf 12). Okrem mládežníckych kategórií sa najmä v tých starších nachádzajú stále aktívni pretekári, ktorí majú absolvovaných najviac pretekov. Môže sa to zdať samozrejmé, keďže mali viac času, ale v porovnaní s inými športami ide skôr o raritu. Aj to dokazuje, že je to skutočne šport pre všetky vekové kategórie a v budúcnosti má veľký potenciál.
-
-<img src="/images/graf12.png" alt="Graf 12" height="300">
-
-*Graf 12: Bodový graf vizualizujúci vzťah medzi vekom a počtom absolvovaných pretekov. Zaujímavosťou je vysoký počet absolvovaný pretekov u bežcov v starších kategóriách, čo dokazuje ich aktivitu aj neskoršom veku.*
+### Data Processing
+Data were stored in an SQL database called `orienteering.db`. Data cleaning and proper formatting were performed during insertion into the tables. The database schema included the following tables:  
+- `Runners` (information about runners)  
+- `Clubs` (club details)  
+- `Competitions` (competition data)  
+- `Competition_categories` (competition categories)  
+- `Cities` (city data)  
 
 ---
 
-## Záver
-Orientačný beh má na Slovensku dlhú históriu, no aj tak sa dá povedať, že stále sa len rozvíja. Napríklad, susedné Česko má päťkrát viac bežcov a vyššiu úroveň systematickej práce s mládežou aj dospelými. Česi patria k svetovej špičke, zatiaľ čo úspechy slovenských bežcov na svetových podujatiach sú zatiaľ ojedinelé. Verím, že aj tento projekt pomôže nahliadnuť do fungovania orientačného behu na Slovensku a s prípadným rozšírením prispeje k jeho budúcemu rozvoju.
-Celkovo tento projekt zhromaždil, spracoval a analyzoval údaje o orientačnom behu na Slovensku. Vytvorená webová aplikácia poskytuje zaujímavý pohľad na tento šport, pomáha pochopiť dlhoročné trendy, účasti pretekárov či aktivity klubov.
-Skúsenosti získané z tohto projektu mi zdôraznili dôležitosť práce s dátami, keďže práve oni môžu byť kľúčovým nástrojom na riešenie problematiky v danej sfére. Osobne ma spracovanie dát a ich následná analýza veľmi bavila a poskytla mi nový pohľad na šport, ktorému sa venujem.
+### Data Visualization and Analysis
+For data visualization, I created a web application using the Flask framework with three HTML templates:
+- `main.html`: The main page displays key metrics such as club activity, age and gender distribution of runners, and competition classifications. A list of all clubs is provided for easy navigation to individual club pages.
+- `club.html`: Displays detailed information about each club, including charts showing the distribution of members by gender, age, and competitions organized since 2018. Competitions are listed and clickable for detailed views.
+- `competition.html`: Displays information about a competition and a chart visualizing participants in each category.
+
+Charts and maps were created using Google Charts and Leaflet, providing an interactive approach to the data with the possibility of updates. The analysis focused mainly on the main page charts, as they offer a comprehensive overview of orienteering in Slovakia and help identify key trends and relationships between clubs, competitions, and runners.
 
 ---
 
-## Zdroje
+## Analysis Results
+
+### Runners
+Currently, there are 861 registered orienteering runners in Slovakia, with a very wide age distribution (Chart 1). Orienteering is often considered a family sport, as it allows participation across all age categories. Families can attend competitions, with each member competing in their own category. Categories such as OPEN and N are available for the public and beginners, allowing them to learn the basics on simpler courses.
+
+Categories are divided by age and gender, with younger categories in two-year intervals and veteran categories in five-year intervals. The main category is W21/M21, whose top runners form the national team and may represent Slovakia at European or World events.  
+Orienteering is also a sport with balanced gender representation. In Slovakia, approximately 60% of participants are male and 40% female (Chart 2). It actively supports gender equality and provides opportunities for all age groups.
+
+<img src="/images/graf1.png" alt="Chart 1" height="300"> <img src="/images/graf2.png" alt="Chart 2" height="300">
+
+*Chart 1: Age distribution of runners, showing demographic composition and identifying the largest groups. The average age of men and women is indicated in the title, with men averaging 3 years older.*  
+*Chart 2: Gender distribution in clubs. The proportion of men and women is shown as bars, with horizontal lines representing overall averages.*
+
+---
+
+### Clubs
+
+<img src="/images/graf3.png" alt="Chart 3" height="300">  
+*Chart 3: Interactive map showing the location of clubs. Circle size represents the number of members per club.*
+
+The SZOŠ currently has 21 registered clubs. They represent the local level, all linked to the national federation. Clubs are generally open to all interested individuals. Most clubs are located in regional cities, with the Bratislava region having the largest share of both clubs and runners (Chart 3). More than half of runners come from the five largest clubs (Chart 4), while smaller clubs have fewer than 50 members.
+
+<img src="/images/graf4.png" alt="Chart 4" height="300"> <img src="/images/graf5.png" alt="Chart 5" height="300">
+
+*Chart 4: Number of members per club. Each color segment represents a club’s members.*  
+*Chart 5: Number of competitions organized by each club from 2018–2024. Highlights the most active clubs.*
+
+Clubs are also responsible for organizing competitions, ideally rotating responsibilities to ensure equal participation. The total number of competitions can be misleading, as clubs vary in size (Chart 5). Chart 6 shows the number of members per organized competition, revealing a significant disparity; seven clubs have not organized any events in the last six years.
+
+Member activity relative to completed competitions can also be informative. Chart 7 shows that three clubs are nearly inactive. Differences between clubs are smaller, but overall average participation is low, despite approximately 18 national competitions per year.
+
+<img src="/images/graf6.png" alt="Chart 6" height="300"> <img src="/images/graf7.png" alt="Chart 7" height="300">
+
+*Chart 6: Member-to-competition ratio for clubs (2018–2024).*  
+*Chart 7: Average competition participation per member per year (2018–2024).*
+
+---
+
+### Competitions
+Slovakia offers ideal conditions for orienteering, including varied terrain, beautiful nature, and high-quality cartography. Several major international and world competitions have been successfully organized here. In 2023, Košice hosted the Veteran World Championships.
+
+Orienteering takes place in forests, urban areas, and different seasons. It includes multiple formats: long and middle-distance courses, sprints, night events, and hybrid competitions like mountain biking or ski orienteering. The newest discipline is the knock-out sprint, featuring multiple elimination rounds and providing spectator appeal. All disciplines share the goal of finding all control points in the correct order as quickly as possible. Discipline popularity depends on runner preferences (Chart 8).
+
+<img src="/images/graf8.png" alt="Chart 8" height="300">
+
+*Chart 8: Popularity of different disciplines. Y-axis: discipline names; X-axis: average participants per competition.*
+
+Competitions are divided into regional, school, and national events. This analysis focuses on national competitions, as school competitions may include unregistered participants and regional competitions may have differing classification rules.
+
+National competitions include the Slovak rankings and national championships. Championships are held once per season for each discipline, while rankings account for other events. Points contribute to the national ranking.
+
+The season lasts from March to late November, with competitions evenly spread, except during summer holidays when participation may decrease due to travel. Clubs organize the competitions, ideally rotating responsibility. Some clubs, such as TKE (Karst) and BBA (Cesom), consistently organize traditional events that remain popular (Chart 9). Participation trends slightly decline over the season (Chart 9), with fewer participants later in the season.  
+
+<img src="/images/graf9.png" alt="Chart 9" height="300"> <img src="/images/graf10.png" alt="Chart 10" height="300">
+
+*Chart 9: Scatter plot of participant numbers by competition date, showing a slight decreasing trend.*  
+*Chart 10: Total number of competitions per year since 1999, color-coded by classification. Data inconsistencies pre-2018 are noted.*
+
+Competition numbers fell sharply in 2020–2021 due to the COVID-19 pandemic (Chart 10). This affected youth participation, especially ages 16–20 (Chart 11), and some clubs faced financial difficulties or altered participation patterns.
+
+<img src="/images/graf11.png" alt="Chart 11" height="300">
+
+*Chart 11: Histogram of average runner representation in competition categories.*
+
+Despite challenges, the federation and clubs attempt to restore participation through promotions, school competitions, and recruitment programs. Orienteering remains a family sport, and a positive correlation exists between age and number of completed competitions (Chart 12), highlighting long-term activity and multi-age participation.
+
+<img src="/images/graf12.png" alt="Chart 12" height="300">
+
+*Chart 12: Scatter plot of age vs. number of competitions completed. Older participants show high activity.*
+
+---
+
+## Conclusion
+Orienteering has a long history in Slovakia but continues to develop. Neighboring Czechia has five times more runners and stronger youth programs. Czech runners are world-class, while Slovak successes are rare. This project provides insights into orienteering in Slovakia and, with expansion, may contribute to its growth.  
+The project collected, processed, and analyzed data, and the web application provides an engaging overview of the sport, long-term trends, runner participation, and club activities. It highlighted the importance of working with data, which can be a key tool for solving challenges in this field. Data analysis offered a new perspective on a sport I actively enjoy.
+
+---
+
+## References
 - [IS SZOŠ](https://is.orienteering.sk)  
 - [SimpleMaps](https://simplemaps.com/data/sk-cities)  
